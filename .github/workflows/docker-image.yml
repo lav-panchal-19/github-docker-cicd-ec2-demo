@@ -17,6 +17,6 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
     - name: Build the Docker image
-      run: docker build -t github-docker-cicd-ec2-demo .
+      run: docker build -t backend-cicd-demo .
     - name: Publish to Dockerhub
-      run: docker push lavpanchalbacancy/github-docker-cicd-ec2-demo:latest
+      run: docker push lavpanchalbacancy/backend-cicd-demo:latest
