@@ -18,5 +18,5 @@ jobs:
 
     - name: Build the Docker image
       run: docker build -t github-docker-cicd-ec2-demo .
-    - name Publish to Dockerhub
+    - name: Publish to Dockerhub
       run: docker push lavpanchalbacancy/github-docker-cicd-ec2-demo:latest
