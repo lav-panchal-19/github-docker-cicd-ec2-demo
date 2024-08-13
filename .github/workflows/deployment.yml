@@ -1,0 +1,19 @@
+name: Docker Image CD
+
+on:
+  workfrow_run:
+    workfrows: ["Docker Image CI"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull docker image from Dockerhub
+      run: sudo docker pull lavpanchalbacancy/backend-cicd-demo:latest
+    - name: Delete old docker container
+      run: sudo docker rm -f cicd-pipeline-container || true
+    - name: Run docker container
+      run: suo docker run -d -p 3000:3000 cicd-pipeline-container lavpanchalbacancy/backend-cicd-demo
