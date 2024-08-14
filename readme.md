@@ -1,1 +1,1 @@
-# github-docker-cicd-ec2-demo
+# github-docker-cicd-ec2 Demo
