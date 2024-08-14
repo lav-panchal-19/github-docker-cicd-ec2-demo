@@ -5,11 +5,10 @@ on:
     workflows: ["Lint Codebase"]
     types:
       - completed
-  push:
-    branches: [ "main" ]
 
 jobs:
   build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
 
     steps:
